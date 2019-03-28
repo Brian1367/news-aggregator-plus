@@ -1,0 +1,20 @@
+
+<h1>Articles for Slacker!</h1>
+<br/>
+<% if @articles.length > 0 %>
+ <% @articles.each do |article| %>
+   <div class='article_div'>
+     <a href="/articles/individual/<%= article.id %>">
+       <h3 class='article_title'><%=article.title %></h3>
+     </a>
+     <a href="<%=article.url%>" target='_blank'><p>(<%=article.url %>)</p></a>
+     <p><%=article.description %></p>
+   </div>
+ <% end %>
+<% else %>
+ <h3 class='article_div'>No submissions yet - better enter something new.</h3>
+<% end %>
+<div class='button_div'>
+ <a href='/articles/new' class='button'>Add Something New!</a>
+ <a href='/random' class='button'>Random</a>
+</div>
